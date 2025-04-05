@@ -31,13 +31,11 @@ for (let i = 0; i < boxes.length; i++) {
   boxes[i].addEventListener("click", (e) => {
     //tu kod co jak kliknieto
     if (activePlayer === "player1") {
-      if (isOccupied(i) == true) {
-      } else {
+      if (!isOccupied(i)) {
         funPlayX(i);
       }
     } else {
-      if (isOccupied(i) == true) {
-      } else {
+      if (!isOccupied(i)) {
         funPlayCircle(i);
       }
     }
