@@ -135,7 +135,7 @@ function isOccupied(boxIndex) {
 }
 
 function winMessage(symbol) {
-  communication.style.opacity = "1";
+  communication.style.display = "initial";
   communication.innerHTML = `<h2>${symbol} WYGRYWA !!</h2>`;
 }
 
@@ -148,5 +148,5 @@ function clearBoard() {
     a.innerHTML = "<p></p>";
   }
   communication.innerHTML = " ";
-  communication.style.opacity = "0";
+  communication.style.display = "none";
 }
