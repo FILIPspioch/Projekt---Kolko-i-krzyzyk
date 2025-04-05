@@ -2,13 +2,10 @@
 const board = document.querySelector("#board");
 const boxes = document.querySelectorAll(".grid_box");
 
-const btn_player1 = document.querySelector("#btn_player1");
-const btn_player2 = document.querySelector("#btn_player2");
-
 const communication = document.querySelector("#communication");
 
 //zmienne
-let activePlayer;
+let activePlayer = 1;
 
 //klasy
 class boxObj {
@@ -20,10 +17,8 @@ class boxObj {
 
 //tablice
 let boxesObjects = new Array(9);
-//kod
-btn_player1.addEventListener("click", () => (activePlayer = 1));
-btn_player2.addEventListener("click", () => (activePlayer = 2));
 
+//kod
 for (let i = 0; i < boxes.length; i++) {
   // Tworzymy obiekt, bo nie był stworzony wcześniej
   boxesObjects[i] = new boxObj(false, undefined);
@@ -54,6 +49,8 @@ for (let i = 0; i < boxes.length; i++) {
 }
 
 function funPlayX(boxIndex) {
+  activePlayer = 2;
+
   // To zmienione bo nie ma sensu deklarować od nowa
   boxesObjects[boxIndex].occupied = true;
   boxesObjects[boxIndex].char = "X";
@@ -61,6 +58,8 @@ function funPlayX(boxIndex) {
 }
 
 function funPlayCircle(boxIndex) {
+  activePlayer = 1;
+
   boxesObjects[boxIndex].occupied = true;
   boxesObjects[boxIndex].char = "O";
   boxes[boxIndex].innerHTML = "<p>O<p>";
