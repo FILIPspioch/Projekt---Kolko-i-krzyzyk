@@ -5,6 +5,8 @@ const boxes = document.querySelectorAll(".grid_box");
 const btn_player1 = document.querySelector("#btn_player1");
 const btn_player2 = document.querySelector("#btn_player2");
 
+const communication = document.querySelector("#communication");
+
 //zmienne
 let activePlayer = "";
 
@@ -40,8 +42,16 @@ for (let i = 0; i < boxes.length; i++) {
       }
     }
 
-    console.log(checkForWin("X"));
-    console.log(checkForWin("O"));
+    if (checkForWin("X") == "X wins") {
+      console.log("X wygrywa");
+      winMessage("X");
+      setTimeout(clearBoard, 2000);
+    }
+    if (checkForWin("O") == "O wins") {
+      console.log("O wygrywa");
+      winMessage("O");
+      setTimeout(clearBoard, 2000);
+    }
   });
 }
 
@@ -146,4 +156,21 @@ function checkForWin(symbol) {
 
 function isOccupied(boxIndex) {
   return boxesObjects[boxIndex].occupied;
+}
+
+function winMessage(symbol) {
+  communication.style.opacity = "1";
+  communication.innerHTML = `<h2>${symbol} WYGRYWA !!</h2>`;
+}
+
+function clearBoard() {
+  for (let a of boxesObjects) {
+    a.char = "";
+    a.occupied == false;
+  }
+  for (let a of boxes) {
+    a.innerHTML = "<p></p>";
+  }
+  communication.innerHTML = " ";
+  communication.style.opacity = "0";
 }
