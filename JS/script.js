@@ -8,7 +8,7 @@ const btn_player2 = document.querySelector("#btn_player2");
 const communication = document.querySelector("#communication");
 
 //zmienne
-let activePlayer = "";
+let activePlayer;
 
 //klasy
 class boxObj {
@@ -21,8 +21,8 @@ class boxObj {
 //tablice
 let boxesObjects = new Array(9);
 //kod
-btn_player1.addEventListener("click", () => (activePlayer = "player1"));
-btn_player2.addEventListener("click", () => (activePlayer = "player2"));
+btn_player1.addEventListener("click", () => (activePlayer = 1));
+btn_player2.addEventListener("click", () => (activePlayer = 2));
 
 for (let i = 0; i < boxes.length; i++) {
   // Tworzymy obiekt, bo nie był stworzony wcześniej
@@ -30,7 +30,7 @@ for (let i = 0; i < boxes.length; i++) {
 
   boxes[i].addEventListener("click", (e) => {
     //tu kod co jak kliknieto
-    if (activePlayer === "player1") {
+    if (activePlayer === 1) {
       if (!isOccupied(i)) {
         funPlayX(i);
       }
