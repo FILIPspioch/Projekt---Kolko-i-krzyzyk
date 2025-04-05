@@ -71,88 +71,65 @@ function checkForWin(symbol) {
 
   if (
     // linia pozioma 1
-    boxesObjects[0].occupied == true &&
     boxesObjects[0].char === symbol &&
-    boxesObjects[1].occupied == true &&
     boxesObjects[1].char == symbol &&
-    boxesObjects[2].occupied == true &&
     boxesObjects[2].char == symbol
   ) {
     return true;
   } else if (
     //linia pozioma 2
-    boxesObjects[3].occupied == true &&
     boxesObjects[3].char == symbol &&
-    boxesObjects[4].occupied == true &&
     boxesObjects[4].char == symbol &&
-    boxesObjects[5].occupied == true &&
     boxesObjects[5].char == symbol
   ) {
     return true;
   } else if (
-    boxesObjects[6].occupied == true &&
     boxesObjects[6].char == symbol &&
-    boxesObjects[7].occupied == true &&
     boxesObjects[7].char == symbol &&
-    boxesObjects[8].occupied == true &&
     boxesObjects[8].char == symbol
   ) {
     return true;
   } else if (
     // linia skośna 1
-    boxesObjects[0].occupied == true &&
     boxesObjects[0].char == symbol &&
-    boxesObjects[4].occupied == true &&
     boxesObjects[4].char == symbol &&
-    boxesObjects[8].occupied == true &&
     boxesObjects[8].char == symbol
   ) {
     return true;
   } else if (
     //linia skośna 2
-    boxesObjects[2].occupied == true &&
     boxesObjects[2].char == symbol &&
-    boxesObjects[4].occupied == true &&
     boxesObjects[4].char == symbol &&
-    boxesObjects[6].occupied == true &&
     boxesObjects[6].char == symbol
   ) {
     return true;
   } else if (
     //linia pionowa 1
-    boxesObjects[0].occupied == true &&
     boxesObjects[0].char == symbol &&
-    boxesObjects[3].occupied == true &&
     boxesObjects[3].char == symbol &&
-    boxesObjects[6].occupied == true &&
     boxesObjects[6].char == symbol
   ) {
     return true;
   } else if (
     // linia pionowa 2
-    boxesObjects[1].occupied == true &&
     boxesObjects[1].char == symbol &&
-    boxesObjects[4].occupied == true &&
     boxesObjects[4].char == symbol &&
-    boxesObjects[7].occupied == true &&
     boxesObjects[7].char == symbol
   ) {
     return true;
   } else if (
     //linia pion 3
-    boxesObjects[2].occupied == true &&
     boxesObjects[2].char == symbol &&
-    boxesObjects[5].occupied == true &&
     boxesObjects[5].char == symbol &&
-    boxesObjects[8].occupied == true &&
     boxesObjects[8].char == symbol
   ) {
     return true;
-  } else {
-    return false;
   }
+
+  return false;
 }
 
+// nwm czy jest jakiś większy sens tej funkcji szczerze
 function isOccupied(boxIndex) {
   return boxesObjects[boxIndex].occupied;
 }
