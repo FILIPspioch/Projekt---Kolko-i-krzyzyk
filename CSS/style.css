@@ -95,3 +95,10 @@ body
 {
     filter: invert();
 }
+
+
+main h2
+{
+    font-family: Arial, Helvetica;
+    text-align: center;
+}
