@@ -40,12 +40,12 @@ for (let i = 0; i < boxes.length; i++) {
       }
     }
 
-    if (checkForWin("X") == "X wins") {
+    if (checkForWin("X")) {
       console.log("X wygrywa");
       winMessage("X");
       setTimeout(clearBoard, 2000);
     }
-    if (checkForWin("O") == "O wins") {
+    if (checkForWin("O")) {
       console.log("O wygrywa");
       winMessage("O");
       setTimeout(clearBoard, 2000);
@@ -68,6 +68,7 @@ function funPlayCircle(boxIndex) {
 
 function checkForWin(symbol) {
   //tutaj sprawdzac indexy
+
   if (
     // linia pozioma 1
     boxesObjects[0].occupied == true &&
@@ -77,7 +78,7 @@ function checkForWin(symbol) {
     boxesObjects[2].occupied == true &&
     boxesObjects[2].char == symbol
   ) {
-    return `${symbol} wins`;
+    return true;
   } else if (
     //linia pozioma 2
     boxesObjects[3].occupied == true &&
@@ -87,7 +88,7 @@ function checkForWin(symbol) {
     boxesObjects[5].occupied == true &&
     boxesObjects[5].char == symbol
   ) {
-    return `${symbol} wins`;
+    return true;
   } else if (
     boxesObjects[6].occupied == true &&
     boxesObjects[6].char == symbol &&
@@ -96,7 +97,7 @@ function checkForWin(symbol) {
     boxesObjects[8].occupied == true &&
     boxesObjects[8].char == symbol
   ) {
-    return `${symbol} wins`;
+    return true;
   } else if (
     // linia skośna 1
     boxesObjects[0].occupied == true &&
@@ -106,7 +107,7 @@ function checkForWin(symbol) {
     boxesObjects[8].occupied == true &&
     boxesObjects[8].char == symbol
   ) {
-    return `${symbol} wins`;
+    return true;
   } else if (
     //linia skośna 2
     boxesObjects[2].occupied == true &&
@@ -116,7 +117,7 @@ function checkForWin(symbol) {
     boxesObjects[6].occupied == true &&
     boxesObjects[6].char == symbol
   ) {
-    return `${symbol} wins`;
+    return true;
   } else if (
     //linia pionowa 1
     boxesObjects[0].occupied == true &&
@@ -126,7 +127,7 @@ function checkForWin(symbol) {
     boxesObjects[6].occupied == true &&
     boxesObjects[6].char == symbol
   ) {
-    return `${symbol} wins`;
+    return true;
   } else if (
     // linia pionowa 2
     boxesObjects[1].occupied == true &&
@@ -136,7 +137,7 @@ function checkForWin(symbol) {
     boxesObjects[7].occupied == true &&
     boxesObjects[7].char == symbol
   ) {
-    return `${symbol} wins`;
+    return true;
   } else if (
     //linia pion 3
     boxesObjects[2].occupied == true &&
@@ -146,9 +147,9 @@ function checkForWin(symbol) {
     boxesObjects[8].occupied == true &&
     boxesObjects[8].char == symbol
   ) {
-    return `${symbol} wins`;
+    return true;
   } else {
-    return `no wins`;
+    return false;
   }
 }
 
