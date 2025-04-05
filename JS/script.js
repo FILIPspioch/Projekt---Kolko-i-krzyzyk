@@ -70,7 +70,7 @@ function checkForWin(symbol) {
 
   if (
     // linia pozioma 1
-    boxesObjects[0].char === symbol &&
+    boxesObjects[0].char == symbol &&
     boxesObjects[1].char == symbol &&
     boxesObjects[2].char == symbol
   ) {
