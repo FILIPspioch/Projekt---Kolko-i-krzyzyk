@@ -141,7 +141,7 @@ function winMessage(symbol) {
 
 function clearBoard() {
   for (let a of boxesObjects) {
-    a.char = "";
+    a.char = undefined;
     a.occupied == false;
   }
   for (let a of boxes) {
